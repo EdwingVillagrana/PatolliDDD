@@ -19,10 +19,10 @@ public class Tablero implements Graphic {
     private int numCasillas;
     //El tablero contiene una lista<Graphic> que son las aspas y el centro.
     private List<Graphic> listaGraficos;
-    int contadorSuperior;
-    int contadorInferior;
-    int contadorIzquierdo;
-    int contadorDerecho;
+    private int contadorSuperior;
+    private int contadorInferior;
+    private int contadorIzquierdo;
+    private int contadorDerecho;
 
     /**
      * Constructor que inicializa los atributos de la clase al valor de los
@@ -33,23 +33,21 @@ public class Tablero implements Graphic {
      */
     public Tablero(int numCasillas) {
         this.numCasillas = numCasillas;
+        contadorSuperior = 2;
         
         if(numCasillas == 5){
-            this.contadorSuperior = 2;
             this.contadorIzquierdo = 13;
             this.contadorInferior = 24;
             this.contadorDerecho = 35;
         }
         
         if(numCasillas == 6){
-            this.contadorSuperior = 2;
             this.contadorIzquierdo = 15;
             this.contadorInferior = 28;
             this.contadorDerecho = 41;
         }
         
         if(numCasillas == 7){
-            this.contadorSuperior = 2;
             this.contadorIzquierdo = 17;
             this.contadorInferior = 32;
             this.contadorDerecho = 47;
