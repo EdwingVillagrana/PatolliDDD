@@ -7,7 +7,6 @@ package dominio;
 import interfaces_dominio.IJugador;
 import java.util.List;
 import java.util.Objects;
-import tablero.Ficha;
 
 /**
  * Esta entidad representa al jugador
@@ -87,10 +86,7 @@ public class Jugador implements IJugador {
             return false;
         }
         final Jugador other = (Jugador) obj;
-        if (!Objects.equals(this.nombre, other.nombre)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.nombre, other.nombre);
     }
 
     @Override
