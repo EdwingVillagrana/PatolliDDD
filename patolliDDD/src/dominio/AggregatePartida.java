@@ -4,7 +4,7 @@
  */
 package dominio;
 
-import interfaces_dominio.IJugador;
+//import interfaces_dominio.IJugador;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +16,35 @@ public class AggregatePartida {
     
     private int idPartida;
     private Tablero tablero;
-    private List<IJugador> jugadores;
+    private List<Jugador> jugadores;
     
     public AggregatePartida(){
         this.jugadores = new ArrayList<>();
         this.idPartida = 1;
+    }
+
+    public int getIdPartida() {
+        return idPartida;
+    }
+
+    public void setIdPartida(int idPartida) {
+        this.idPartida = idPartida;
+    }
+
+    public Tablero getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero;
+    }
+
+    public List<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(List<Jugador> jugadores) {
+        this.jugadores = jugadores;
     }
     
     public void crearTablero(int numCasillas){
@@ -31,11 +55,19 @@ public class AggregatePartida {
         return jugadores.size() == 4;
     }
     
-    public void agregarJugador(IJugador jugador){
+    public void agregarJugador(Jugador jugador){
         jugadores.add(jugador);
     }
     
-    public void moverFichaDeJugador(Jugador jugador, int numeroCasillasPorAvanzar){
-        tablero.moverFichaJugador(jugador, numeroCasillasPorAvanzar);
+    public void moverFichaDeJugador(int idJugador, int numeroCasillasPorAvanzar){
+        Jugador aux = null;
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (jugadores.get(i).getId() == idJugador){
+                aux = jugadores.get(i);
+            }
+        }
+        if (aux != null){
+            tablero.moverFichaJugador(aux, numeroCasillasPorAvanzar);
+        }
     }
 }
