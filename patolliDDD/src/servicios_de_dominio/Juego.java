@@ -14,7 +14,7 @@ import java.util.Random;
 public class Juego {
     
     private int idPartida;
-    private boolean cañas[];
+    private boolean cañas[] = new boolean[5];
     private double fondoApuestas;
     
     public Juego(AggregatePartida partida){
