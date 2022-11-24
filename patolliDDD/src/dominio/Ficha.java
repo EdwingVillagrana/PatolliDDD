@@ -12,12 +12,21 @@ package dominio;
 public class Ficha {
 
     private int idFicha;
+    private int coordenadasX;
+    private int coordenadasY;
     private String color;
     private int numCasilla;
 
     public Ficha(int idFicha, String color) {
         this.color = color;
         this.idFicha = idFicha;
+    }
+
+    public Ficha(int idFicha, int coordenadasX, int coordenadasY, String color) {
+        this.idFicha = idFicha;
+        this.coordenadasX = coordenadasX;
+        this.coordenadasY = coordenadasY;
+        this.color = color;
     }
 
     public int getIdFicha() {
@@ -42,6 +51,22 @@ public class Ficha {
 
     public void setNumCasilla(int numCasilla) {
         this.numCasilla = numCasilla;
+    }
+
+    public int getCoordenadasX() {
+        return coordenadasX;
+    }
+
+    public void setCoordenadasX(int coordenadasX) {
+        this.coordenadasX = coordenadasX;
+    }
+
+    public int getCoordenadasY() {
+        return coordenadasY;
+    }
+
+    public void setCoordenadasY(int coordenadasY) {
+        this.coordenadasY = coordenadasY;
     }
 
     public boolean fichaSigueEnJuego() {
