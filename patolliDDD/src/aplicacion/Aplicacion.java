@@ -5,17 +5,19 @@
 
 package aplicacion;
 
+import java.awt.Color;
+
 /**
  *
  * @author edw_v
  */
 public class Aplicacion {
 
-    public void crearPartida(){
+    public void crearPartida(int numeroDeCasillasPorAspa, Color colorDelJugador, int puntosPorJugador, int cantidadPorApuesta){
         
     }
     
-    public void unirseAPartida(){
+    public void unirseAPartida(Color colorDelJugador){
         
     }
     
@@ -27,7 +29,7 @@ public class Aplicacion {
         
     }
     
-    public void ejercerTurno(){
+    public void ejercerTurno(int valorObtenidoEnDados){
         
     }
     
