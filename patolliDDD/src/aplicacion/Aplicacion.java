@@ -13,11 +13,11 @@ import java.awt.Color;
  */
 public class Aplicacion {
 
-    public void crearPartida(int numeroDeCasillasPorAspa, Color colorDelJugador, int puntosPorJugador, int cantidadPorApuesta){
+    public void crearPartida(String nombreDelJugador, int numeroDeCasillasPorAspa, Color colorDelJugador, int puntosPorJugador, int cantidadPorApuesta){
         
     }
     
-    public void unirseAPartida(Color colorDelJugador){
+    public void unirseAPartida(String nombreDelJugador, Color colorDelJugador){
         
     }
     
