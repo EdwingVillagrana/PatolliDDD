@@ -1,3 +1,5 @@
+package guis;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,6 +10,7 @@
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.util.Random;
+import tablero.Graphic;
 import tablero.Tablero;
 
 /**
@@ -25,7 +28,7 @@ public class FrmTablero extends javax.swing.JFrame {
 
     public void paint(Graphics g){
         super.paint(g);
-        Tablero tbl = new Tablero(7);
+        Graphic tbl = new Tablero(7);
         tbl.dibujar(g);
     }
     

@@ -5,6 +5,7 @@
 package servicios_de_dominio;
 
 import dominio.AggregatePartida;
+import interfaces_dominio.IAggregateRoot;
 import java.util.Random;
 
 /**
@@ -13,19 +14,20 @@ import java.util.Random;
  */
 public class Juego {
     
-    private int idPartida;
+    private IAggregateRoot partida;
     private boolean cañas[] = new boolean[5];
     private double fondoApuestas;
     
-    public Juego(AggregatePartida partida){
-        this.idPartida = partida.getIdPartida();
+    public Juego(IAggregateRoot partida){
+        this.partida = partida;
     }
     
     /**
      * Crea el tablero de la partida
+     * @param numeroDeCasillas
      */
-    public void crearTablero(){
-        //TODO: usar el idPartida para crear el tablero
+    public void crearTablero(int numeroDeCasillas){
+        partida.crearTablero(numeroDeCasillas);
     }
     
     /**

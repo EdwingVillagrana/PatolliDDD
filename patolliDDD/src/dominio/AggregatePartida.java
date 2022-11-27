@@ -5,6 +5,7 @@
 package dominio;
 
 //import interfaces_dominio.IJugador;
+import interfaces_dominio.IAggregateRoot;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author Miguel
  */
-public class AggregatePartida {
+public class AggregatePartida implements IAggregateRoot {
     
     private int idPartida;
     private Tablero tablero;
@@ -47,10 +48,12 @@ public class AggregatePartida {
         this.jugadores = jugadores;
     }
     
+    @Override
     public void crearTablero(int numCasillas){
         tablero = new Tablero(numCasillas);
     }
     
+    @Override
     public boolean verficarNumJugadores(){
         return jugadores.size() == 4;
     }
@@ -77,10 +80,12 @@ public class AggregatePartida {
         return this.idPartida == other.idPartida;
     }
     
+    @Override
     public void agregarJugador(Jugador jugador){
         jugadores.add(jugador);
     }
     
+    @Override
     public void moverFichaDeJugador(int idJugador, int numeroCasillasPorAvanzar){
         Jugador aux = null;
         for (int i = 0; i < jugadores.size(); i++) {
