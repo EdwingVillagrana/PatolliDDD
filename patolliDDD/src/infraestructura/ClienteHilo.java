@@ -5,6 +5,7 @@
 package infraestructura;
 
 import guis.FrmTablero;
+import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,5 +36,20 @@ public class ClienteHilo implements Runnable {
             frmTablero.setVisible(true);
         }
     }
-
+    
+    public void removerClienteHilo(){
+        clientesHilos.remove(this);
+        System.out.println("");
+    }
+    
+    public void cerrarTodo(Socket socket){
+        removerClienteHilo();
+        try {
+            if (socket != null){
+                socket.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

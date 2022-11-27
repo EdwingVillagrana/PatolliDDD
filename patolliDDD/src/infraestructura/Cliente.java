@@ -21,6 +21,7 @@ public class Cliente {
             this.socket = new Socket("localhost", 6000);
             this.nombreDeUsuario = nombreDeUsuario;
         } catch (IOException e) {
+            e.printStackTrace();
         }
     }
     
