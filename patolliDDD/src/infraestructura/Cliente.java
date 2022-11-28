@@ -25,6 +25,16 @@ public class Cliente {
         }
     }
     
+    public void salirDePartida(Socket socket){
+        try {
+            if (socket != null){
+                socket.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     public static void main(String[] args) {
         Cliente cliente = new Cliente("Miguel");
         
